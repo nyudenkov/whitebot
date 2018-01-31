@@ -2,15 +2,15 @@
   "roles": {
     "parliament": {
       "inherits": "white",
-      "permissions": ["tempban", "ban", "unban", "kick", "reboot", "ticket", "whitelist"]
+      "permissions": ["tempban", "ban", "unban", "kick", "reboot"]
     },
     "white": {
       "inherits": false,
-      "permissions": ["ah"]
+      "permissions": ["ah", "kickself"]
     },
     "@everyone": {
       "inherits": false,
-      "permissions": ["ping", "adminwho", "info", "kickself"]
+      "permissions": ["ping", "adminwho", "info"]
     },
     "subscriber": {
       "inherits": false,
