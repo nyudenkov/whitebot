@@ -3,13 +3,13 @@ const DiscordCommand = require('../DiscordCommand.js');
 class DiscordCommandUnBan extends DiscordCommand {
 
   constructor(subsystem) {
-    super("unban", "Разбанить мудака.", 'ban', subsystem);
+    super("unban", "Разбанить человека.", 'ban', subsystem);
   }
 
   onRun(message, permissions, args) {
     var config = this.subsystem.manager.getSubsystem("Config").config;
     if (args.length < 1) {
-      message.reply("Использование: `" + config.discord_command_character + "unban [@UserName] <reason> (Пока что работает только с софтбанами)`");
+      message.reply("Использование: `" + config.discord_command_character + "unban [@UserName] <reason>`");
       return;
     }
 
@@ -30,7 +30,7 @@ class DiscordCommandUnBan extends DiscordCommand {
       resolve => {
         args.shift();
 
-        var reason = "Ризон где?";
+        var reason = "Нет причины.";
 
         if (args.length > 0) {
           reason = args.join(" ");
@@ -40,14 +40,14 @@ class DiscordCommandUnBan extends DiscordCommand {
 
         if (banStatus) {
           this.subsystem.logger.log("info", message.author.username + "#" + message.author.discriminator + " (" + message.author.id + ") unbanned " + resolve.author.username + "#" + resolve.author.discriminator + " (" + resolve.author.id + ") for \"" + reason + "\".");
-          message.reply("Разбанил");
+          message.reply("Разбанил.");
         }
         else {
-          message.reply("Чет не работает, перепроверь ник");
+          message.reply("Перепроверьте ник.");
         }
       },
       reject => {
-        message.reply("Не могу найти");
+        message.reply("Не могу найти.");
       }
     );
   }

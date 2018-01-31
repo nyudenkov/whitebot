@@ -3,7 +3,7 @@ const DiscordCommand = require('../DiscordCommand.js');
 class DiscordCommandTempban extends DiscordCommand {
 
   constructor(subsystem) {
-    super("tempban", "Дать временный бан мудаку.", 'tempban', subsystem);
+    super("tempban", "Дать временный бан человеку.", 'tempban', subsystem);
   }
 
   onRun(message, permissions, args) {
@@ -39,7 +39,7 @@ class DiscordCommandTempban extends DiscordCommand {
       resolve => {
         args.shift();
 
-        var reason = "Ризон где?";
+        var reason = "Нет причины.";
 
         if (args.length > 0) {
           reason = args.join(" ");
@@ -48,10 +48,10 @@ class DiscordCommandTempban extends DiscordCommand {
 
         if (banStatus) {
           this.subsystem.logger.log("info", message.author.username + "#" + message.author.discriminator + " (" + message.author.id + ") banned " + resolve.author.username + "#" + resolve.author.discriminator + " (" + resolve.author.id + ") for " + minutes + " minutes for \"" + reason + "\".");
-          message.reply("Мудак забанен");
+          message.reply("Забанен.");
         }
         else {
-          message.reply("Не могу забанить, помоги!");
+          message.reply("Не могу забанить.");
         }
       },
       (reject) => {

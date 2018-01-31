@@ -41,11 +41,11 @@ class DiscordBanManager {
       expires: expiry
     }
 
-    var banMessage = "You have been banned from " + config.server_name + " for `" + reason + "` it will " + (time ? "expire in " + time + " minutes" : "not expire.");
+    var banMessage = "Ты был забанен в " + config.server_name + " за `" + reason + "` оно   " + (time ? "пройдёт через " + time + " минут" : "не пройдёт.");
 
     guildMember.user.sendMessage(banMessage);
 
-    feedbackChannel.send("**" + guildMember.user.username + "#" + guildMember.user.discriminator + "** Was " + (config.discord_softban ? "soft" : "hard") + "banned from the server for `" + reason + "` it will " + (time ? "expire in **" + time + "** minutes" : "not expire.") + ".")
+    feedbackChannel.send("**" + guildMember.user.username + "#" + guildMember.user.discriminator + "** Был " + (config.discord_softban ? "soft" : "hard") + "забанен с сервера за `" + reason + "` оно " + (time ? "пройдёт через **" + time + "** минут" : "не пройдёт.") + ".")
 
     if (config.discord_softban) {
       guildMember.addRole(config.discord_softban_role).then(
@@ -75,7 +75,7 @@ class DiscordBanManager {
 
     for (var ban of this.bans) {
       if (ban.userID === member.user.id) {
-        feedbackChannel.send("**" + member.user.username + "#" + member.user.discriminator + "** Was unbanned from the server for `" + reason + "`.")
+        feedbackChannel.send("**" + member.user.username + "#" + member.user.discriminator + "** Был разбанен за `" + reason + "`.")
         this.bans = newBans;
         this.save();
         member.removeRole(config.discord_softban_role);
@@ -106,7 +106,7 @@ class DiscordBanManager {
     for (var ban of bansToLift) {
       guild.fetchMember(ban.userID).then(
         resolve => {
-          this.unban(guild, resolve, "Ban expired.");
+          this.unban(guild, resolve, "Бан прошел.");
         },
         reject => {
           this.subsystem.manager.logger.log("info", "Failed to change discord roles of user with ID " + ban.userID + " because their ID wasnt found on the server, the ban has been lifted from the config file.");

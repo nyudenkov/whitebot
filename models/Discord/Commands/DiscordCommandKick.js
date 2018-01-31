@@ -3,14 +3,14 @@ const DiscordCommand = require('../DiscordCommand.js');
 class DiscordCommandKick extends DiscordCommand {
 
   constructor(subsystem) {
-    super("kick", "Кикает мразб", 'kick', subsystem);
+    super("kick", "Кикает человека.", 'kick', subsystem);
   }
 
   onRun(message, permissions, args) {
     var config = this.subsystem.manager.getSubsystem("Config").config;
 
     if (args.length < 1) {
-      message.reply("Usage is `" + config.discord_command_character + "kick [@UserName] <reason>`");
+      message.reply("Использование: `" + config.discord_command_character + "kick [@UserName] <reason>`");
       return;
     }
 
@@ -22,7 +22,7 @@ class DiscordCommandKick extends DiscordCommand {
     }
 
     if (user == undefined) {
-      message.reply("Не могу найти такого юзера, блять, ты уверен что ты сделал в таком формате: @Username ?");
+      message.reply("Не могу найти.");
       return;
     }
 
@@ -32,17 +32,17 @@ class DiscordCommandKick extends DiscordCommand {
       (resolve) => {
         var kickeeperms = this.subsystem.permissionManager.getUserPermissions(resolve);
         if (resolve.id == message.member.id) {
-          message.reply("ты не можешь кикнуть сам себя, ебан");
+          message.reply("Ты не можешь кикнуть сам себя.");
           return;
         }
         if (kickeeperms.includes("kick")) {
-          message.reply("ты че охуел своих кикать");
+          message.reply("Ты не можешь кикать тех, кто владеет правами на кик.");
           return;
         }
 
         args.shift();
 
-        var reason = "ризон мне внятный для кика дай";
+        var reason = "Нет причины.";
 
         if (args.length > 0) {
           reason = args.join(" ");
@@ -54,12 +54,12 @@ class DiscordCommandKick extends DiscordCommand {
             message.reply(resolve.user.username + " Was kicked from the server for `" + reason + "`.");
           },
           (reject) => {
-            message.reply("ошибка!!!!!!");
+            message.reply("Ошибка.");
           }
         );
       },
       (reject) => {
-        message.reply("не могу найти ебало. ваще никак. он точно тут есть?");
+        message.reply("Ошибка.");
       }
     );
   }

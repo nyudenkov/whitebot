@@ -3,7 +3,7 @@ const DiscordCommand = require('../DiscordCommand.js');
 class DiscordCommandDuck extends DiscordCommand {
 
   constructor(subsystem) {
-    super("duck", "Pictures of the quack", undefined, subsystem, true);
+    super("duck", "Кря!", undefined, subsystem, true);
   }
 
   onRun(message, permissions, args) {
@@ -64,7 +64,7 @@ class DiscordCommandDuck extends DiscordCommand {
                        "http://www.guy-sports.com/fun_pictures/duck_dead.jpg",
                        "http://www.kappit.com/img/pics/201406_2202_bacfa_sm.jpg",
                        "http://37.media.tumblr.com/ee601d99a4e0d0d52ab6fbbf55f28f2d/tumblr_n45sz1Fgth1sxnr93o1_500.gif"
-                       
+
     ];
     var response = responses[Math.floor(Math.random() * responses.length)];
     message.reply(response);

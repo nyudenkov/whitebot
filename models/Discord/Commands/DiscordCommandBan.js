@@ -3,13 +3,13 @@ const DiscordCommand = require('../DiscordCommand.js');
 class DiscordCommandBan extends DiscordCommand {
 
   constructor(subsystem) {
-    super("ban", "Забанить ебало.", 'ban', subsystem);
+    super("ban", "Забанить человека.", 'ban', subsystem);
   }
 
   onRun(message, permissions, args) {
     var config = this.subsystem.manager.getSubsystem("Config").config;
     if(args.length < 1) {
-      message.reply("Usage is `" + config.discord_command_character + "ban [@UserName] <reason>`");
+      message.reply("Использование: `" + config.discord_command_character + "ban [@UserName] <reason>`");
       return;
     }
 
@@ -21,7 +21,7 @@ class DiscordCommandBan extends DiscordCommand {
     }
 
     if(user == undefined) {
-      message.reply("Не могу найти такого юзера, блять, ты уверен что ты сделал в таком формате: @Username ?");
+      message.reply("Не могу найти.");
       return;
     }
 
@@ -31,7 +31,7 @@ class DiscordCommandBan extends DiscordCommand {
       resolve => {
         args.shift();
 
-        var reason = "Ризон где?";
+        var reason = "Нет причины.";
 
         if(args.length > 0) {
           reason = args.join(" ");
@@ -39,13 +39,13 @@ class DiscordCommandBan extends DiscordCommand {
         var banStatus = this.subsystem.banManager.ban(resolve, reason, false);
 
         if(banStatus) {
-          message.reply("Забанил ебало");
+          message.reply("Забанил.");
         } else {
-          message.reply("Че-то ошибка какая-то, не могу забанить")
+          message.reply("Невозможно забанить.")
         }
       },
       (reject) => {
-        message.reply("не могу найти ебало. ваще никак. он точно тут есть?");
+        message.reply("Отклонено. Ошибка.");
       }
     );
   }

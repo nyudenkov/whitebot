@@ -21,7 +21,7 @@ class DiscordRouterMessageDelete extends DiscordRouter {
       var date = new Date();
       var response = "`[" + date.getFullYear() + ":" + date.getMonth() + ":" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "]` ";
 
-      logChannel.send(response + "**" + message.author.username + "#" + message.author.discriminator + "** message was deleted ```" + message.content + "```");
+      logChannel.send(response + "**" + message.author.username + "#" + message.author.discriminator + "** удалил сообщение ```" + message.content + "```");
     });
   }
 

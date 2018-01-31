@@ -26,12 +26,8 @@ class EndpointASayMessage extends APIEndpoint {
 
       var embed = new Discord.RichEmbed();
 
-      embed.setAuthor("New round notifier", "http://i.imgur.com/GPZgtbe.png");
-      embed.setDescription("A new round is about to begin! Join now at " + config.server_join_address);
-      embed.addField("Map Name", data.map_name, true);
-      embed.addField("Revision", data.revision, true);
-      embed.addField("Round Number", data.round, true);
-      embed.addField("Changelog", "No Changes", true);
+      embed.setAuthor("Информация", "https://avatars1.githubusercontent.com/u/31140765?s=70&v=4");
+      embed.setDescription("Новый раунд скоро начнется! Присоединяйся сейчас: " + config.server_join_address);
       embed.setColor("62f442");
 
       var embedmessage = "<@&" + config.discord_subscriber_role + ">";
@@ -41,13 +37,13 @@ class EndpointASayMessage extends APIEndpoint {
           channel.sendEmbed(embed, embedmessage);
         }
       }
-      discord.client.user.setGame("Round Starting");
+      discord.client.user.setGame("Раунд начинается");
     }
     else if (data.status == "ingame") {
-      discord.client.user.setGame("InGame");
+      discord.client.user.setGame("Раунд в процессе");
     }
     else {
-      discord.client.user.setGame("Round Ending");
+      discord.client.user.setGame("Раунд кончился");
     }
 
 

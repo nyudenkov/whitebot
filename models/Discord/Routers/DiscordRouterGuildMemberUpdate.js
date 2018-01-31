@@ -14,12 +14,12 @@ class DiscordRouterGuildMemberUpdate extends DiscordRouter {
 
       //Check for nickname changes
       if(oldMember.nickname !== newMember.nickname) {
-        logChannel.sendMessage(response + "**" + newMember.user.username + "#" + newMember.user.discriminator +  "** changed their nickname to `" + newMember.nickname + "`")
+        logChannel.sendMessage(response + "**" + newMember.user.username + "#" + newMember.user.discriminator +  "** сменил свой ник на `" + newMember.nickname + "`")
       }
 
       //Check for role changes
       if(oldMember.roles.array().length != newMember.roles.array().length) {
-        response += "**" + newMember.user.username + "#" + newMember.user.discriminator +  "** roles have changed:\n     Old Roles: ";
+        response += "**" + newMember.user.username + "#" + newMember.user.discriminator +  "** поменял роли:\n     Старые: ";
 
         var roles = oldMember.roles.array();
 
@@ -40,7 +40,7 @@ class DiscordRouterGuildMemberUpdate extends DiscordRouter {
           response += "_none_";
         }
 
-        response += "\n     New roles: ";
+        response += "\n     Новые: ";
 
         var roles = newMember.roles.array();
 

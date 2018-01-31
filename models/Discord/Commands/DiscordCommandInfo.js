@@ -6,7 +6,7 @@ var Discord = require('discord.js');
 class DiscordCommandInfo extends DiscordCommand {
 
 	constructor(subsystem) {
-		super("info", "Пингует сервачок и показывает информацию о нём", 'info', subsystem);
+		super("info", "Пингует сервер и показывает информацию о нём", 'info', subsystem);
 	}
 
 	onRun(message, permissions, args) {
@@ -39,15 +39,14 @@ class DiscordCommandInfo extends DiscordCommand {
 						//picks a colour from the array "colours" then proceeds to add it to "colour", and stops once "colour" has 6 digits
 					}
 					if(adminwho == "\n") {
-						adminwho = "Нет администраторов онлайн";
+						adminwho = "На сервере нет администраторов";
 					}
 
 					var embed = new Discord.RichEmbed();
 
-					embed.setAuthor("Информация", "http://i.imgur.com/GPZgtbe.png");
+					embed.setAuthor("Информация", "https://avatars1.githubusercontent.com/u/31140765?s=70&v=4");
 					embed.setDescription("Присоединись на сервер сейчас по адресу " + config.server_join_address);
 					embed.addField("Игроков онлайн:", results.data, true);
-					embed.addField("Номер раунда:", byondSS.roundNumber, true);
 					embed.addField("Длительность раунда:", round_duration + " Минут", true);
 					embed.addField("Администраторов онлайн:", adminwho, false);
 					embed.setColor(embedcolor);
