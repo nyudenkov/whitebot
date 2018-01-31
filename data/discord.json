@@ -1,0 +1,21 @@
+{
+  "roles": {
+    "parliament": {
+      "inherits": "white",
+      "permissions": ["tempban", "ban", "unban", "kick", "reboot", "ticket", "whitelist"]
+    },
+    "white": {
+      "inherits": false,
+      "permissions": ["ah"]
+    },
+    "@everyone": {
+      "inherits": false,
+      "permissions": ["ping", "adminwho", "info", "kickself"]
+    },
+    "subscriber": {
+      "inherits": false,
+      "permissions": ["unsubscribe"]
+    }
+  },
+  "admins": ["171505310467358720", "243761508411113483"]
+}

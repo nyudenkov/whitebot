@@ -1,0 +1,27 @@
+{
+  "name": "whitebot",
+  "version": "1.0.0",
+  "description": "The whitebot for admins and players alike.",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Ashleigh Carr",
+  "license": "MIT",
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "^1.17.1",
+    "discord.js": "^11.2.1",
+    "express": "^4.15.2",
+    "jspack": "0.0.4",
+    "mysql": "^2.13.0",
+    "pug": "^2.0.0-beta.12",
+    "recaptcha": "^1.2.1",
+    "request": "^2.81.0",
+    "request-promise-native": "^1.0.4",
+    "twig": "^1.10.4",
+    "utf8": "^3.0.0",
+    "windows-1251": "^1.0.0",
+    "winston": "^3.0.0-rc1"
+  }
+}
