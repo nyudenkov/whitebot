@@ -21,12 +21,19 @@
 ### discord.json
 
   "discord_token": тут должен быть токен для самого бота. Для его получения вы должны создать бота по ссылке https://discordapp.com/developers/docs/intro. Тут сами.
+
   "discord_command_character": префикс для команд. `!` по умолчанию.
+
   "discord_softban": разрешить ли банить.
+
   "discord_softban_role": роль, которая выдается при бане.
+
   Дальше идут каналы:
+
   asay - куда транслируется ASAY, ooc - OOC. Дальше сами.
+
   "discord_guild": айди конференции, где обитает бот.
+
   "discord_subscriber_role": роль для подписчиков на старт раунда.
 
 ## TODO
