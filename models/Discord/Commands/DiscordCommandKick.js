@@ -3,7 +3,7 @@ const DiscordCommand = require('../DiscordCommand.js');
 class DiscordCommandKick extends DiscordCommand {
 
   constructor(subsystem) {
-    super("kick", "Кикает человека.", 'kick', subsystem);
+    super("kick", "кикает человека.", 'kick', subsystem);
   }
 
   onRun(message, permissions, args) {

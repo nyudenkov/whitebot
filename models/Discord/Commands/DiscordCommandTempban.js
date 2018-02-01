@@ -3,7 +3,7 @@ const DiscordCommand = require('../DiscordCommand.js');
 class DiscordCommandTempban extends DiscordCommand {
 
   constructor(subsystem) {
-    super("tempban", "Дать временный бан человеку.", 'tempban', subsystem);
+    super("tempban", "дать временный бан человеку.", 'tempban', subsystem);
   }
 
   onRun(message, permissions, args) {

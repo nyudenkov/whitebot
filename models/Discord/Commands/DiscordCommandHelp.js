@@ -3,7 +3,7 @@ const DiscordCommand = require('../DiscordCommand.js');
 class DiscordCommandHelp extends DiscordCommand {
 
   constructor(subsystem) {
-    super("help", "Показывает команды к которым у вас есть доступ. \n    `!help hidden` - Показывает скрытые команды.", undefined, subsystem);
+    super("help", "показывает команды к которым у вас есть доступ. \n    `!help hidden` - показывает скрытые команды.", undefined, subsystem);
   }
 
   onRun(message, permissions, args) {

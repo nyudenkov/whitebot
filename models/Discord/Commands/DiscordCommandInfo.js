@@ -6,7 +6,7 @@ var Discord = require('discord.js');
 class DiscordCommandInfo extends DiscordCommand {
 
 	constructor(subsystem) {
-		super("info", "Пингует сервер и показывает информацию о нём", 'info', subsystem);
+		super("info", "пингует сервер и показывает информацию о нём", 'info', subsystem);
 	}
 
 	onRun(message, permissions, args) {

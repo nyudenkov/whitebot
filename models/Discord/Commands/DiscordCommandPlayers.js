@@ -4,7 +4,7 @@ const StringUtils = require('../../Utils/String.js');
 class DiscordCommandWho extends DiscordCommand {
 
   constructor(subsystem) {
-    super("who", "Получение списка игроков на сервере", 'who', subsystem);
+    super("who", "получение списка игроков на сервере", 'who', subsystem);
   }
 
   onRun(message, permissions, args) {

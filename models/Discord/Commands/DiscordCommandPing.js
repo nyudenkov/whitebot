@@ -3,7 +3,7 @@ const DiscordCommand = require('../DiscordCommand.js');
 class DiscordCommandPing extends DiscordCommand {
 
   constructor(subsystem) {
-    super("ping", "Пингует сервер и показывает сколько игроков онлайн.", 'ping', subsystem);
+    super("ping", "пингует сервер и показывает сколько игроков онлайн.", 'ping', subsystem);
   }
 
   onRun(message, permissions, args) {

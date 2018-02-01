@@ -4,7 +4,7 @@ const spawn = require('child_process').spawn;
 class DiscordCommandReboot extends DiscordCommand {
 
   constructor(subsystem) {
-    super("reboot", "Перезагружает сервер.", 'reboot', subsystem);
+    super("reboot", "перезагружает сервер.", 'reboot', subsystem);
   }
 
   onRun(message, permissions, args) {

@@ -2,7 +2,7 @@ const DiscordCommand = require('../DiscordCommand.js');
 var windows1251 = require('windows-1251')
 class DiscordCommandAhelp extends DiscordCommand {
   constructor(subsystem) {
-    super("ah", "Ответить на АХелп.", 'ah', subsystem);
+    super("ah", "ответить на АХелп.", 'ah', subsystem);
   }
   onRun(message, permissions, args) {
     var config = this.subsystem.manager.getSubsystem("Config").config;

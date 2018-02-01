@@ -3,7 +3,7 @@ const DiscordCommand = require('../DiscordCommand.js');
 class DiscordCommandBan extends DiscordCommand {
 
   constructor(subsystem) {
-    super("ban", "Забанить человека.", 'ban', subsystem);
+    super("ban", "забанить человека.", 'ban', subsystem);
   }
 
   onRun(message, permissions, args) {
