@@ -9,7 +9,7 @@ class DiscordCommandTempban extends DiscordCommand {
   onRun(message, permissions, args) {
     var config = this.subsystem.manager.getSubsystem("Config").config;
     if (args.length < 1) {
-      message.reply("Использование: `" + config.discord_command_character + "tempban [@UserName] [Minutes] <reason>`");
+      message.reply("\nИспользование: `" + config.discord_command_character + "tempban [@UserName] [Minutes] <reason>`");
       return;
     }
 
@@ -21,7 +21,7 @@ class DiscordCommandTempban extends DiscordCommand {
     }
 
     if (user == undefined) {
-      message.reply("Не могу найти его!");
+      message.reply("\nНе могу найти его!");
       return;
     }
 
@@ -48,14 +48,14 @@ class DiscordCommandTempban extends DiscordCommand {
 
         if (banStatus) {
           this.subsystem.logger.log("info", message.author.username + "#" + message.author.discriminator + " (" + message.author.id + ") banned " + resolve.author.username + "#" + resolve.author.discriminator + " (" + resolve.author.id + ") for " + minutes + " minutes for \"" + reason + "\".");
-          message.reply("Забанен.");
+          message.reply("\nЗабанен.");
         }
         else {
-          message.reply("Не могу забанить.");
+          message.reply("\nНе могу забанить.");
         }
       },
       (reject) => {
-        message.reply("Не могу найти");
+        message.reply("\nНе могу найти");
       }
     );
   }

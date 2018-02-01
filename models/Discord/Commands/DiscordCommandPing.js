@@ -14,7 +14,7 @@ class DiscordCommandPing extends DiscordCommand {
       if('error' in results) {
         message.reply(results.error);
       } else {
-        message.reply("Там **" + results.data + "** игроков онлайн, присоединяйся к ним написав **\"" + config.server_join_address + "\"** в адресной строке браузера");
+        message.reply("\nТам **" + results.data + "** игроков онлайн, присоединяйся к ним написав **\"" + config.server_join_address + "\"** в адресной строке браузера");
       }
     });
   }

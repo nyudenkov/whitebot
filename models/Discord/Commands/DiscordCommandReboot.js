@@ -10,7 +10,7 @@ class DiscordCommandReboot extends DiscordCommand {
   onRun(message, permissions, args) {
     var config = this.subsystem.manager.getSubsystem("Config").config;
     if (args.length < 1) {
-      message.reply("Доступные команды: \n     `" + config.discord_command_character + "reboot hard` Убивает демона и стартует новый. \n     `" + config.discord_command_character + "reboot soft` говорит серверу ребутнуться. \n     `" + config.discord_command_character + "reboot bot` демону бота говорит ребутнуться и обновиться.");
+      message.reply("\nДоступные команды: \n     `" + config.discord_command_character + "reboot hard` Убивает демона и стартует новый. \n     `" + config.discord_command_character + "reboot soft` говорит серверу ребутнуться. \n     `" + config.discord_command_character + "reboot bot` демону бота говорит ребутнуться и обновиться.");
       return;
     }
 
@@ -21,7 +21,7 @@ class DiscordCommandReboot extends DiscordCommand {
     case 'hard':
       var taskkill = spawn('taskkill', ['/F', '/IM', 'dreamdaemon.exe']);
       taskkill.on('exit', (code) => {
-        message.reply("Hard reboot exited with exit code: " + code);
+        message.reply("\nHard reboot exited with exit code: " + code);
       });
       break;
     case 'soft':
@@ -36,14 +36,14 @@ class DiscordCommandReboot extends DiscordCommand {
       });
       break;
     case 'bot':
-      message.reply("Updating & Rebooting Bot.").then(() => {
+      message.reply("\nUpdating & Rebooting Bot.").then(() => {
         this.subsystem.manager.getSubsystem("Updater").update((data) => {
           message.reply(data);
         });
       });
       break;
     default:
-      message.reply("Используй `hard`, `soft` или `bot`");
+      message.reply("\nИспользуй `hard`, `soft` или `bot`");
       break;
 
     }

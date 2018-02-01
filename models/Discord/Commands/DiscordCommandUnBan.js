@@ -9,7 +9,7 @@ class DiscordCommandUnBan extends DiscordCommand {
   onRun(message, permissions, args) {
     var config = this.subsystem.manager.getSubsystem("Config").config;
     if (args.length < 1) {
-      message.reply("Использование: `" + config.discord_command_character + "unban [@UserName] <reason>`");
+      message.reply("\nИспользование: `" + config.discord_command_character + "unban [@UserName] <reason>`");
       return;
     }
 
@@ -21,7 +21,7 @@ class DiscordCommandUnBan extends DiscordCommand {
     }
 
     if (user == undefined) {
-      message.reply("Не могу найти");
+      message.reply("\nНе могу найти");
       return;
     }
 
@@ -40,14 +40,14 @@ class DiscordCommandUnBan extends DiscordCommand {
 
         if (banStatus) {
           this.subsystem.logger.log("info", message.author.username + "#" + message.author.discriminator + " (" + message.author.id + ") unbanned " + resolve.author.username + "#" + resolve.author.discriminator + " (" + resolve.author.id + ") for \"" + reason + "\".");
-          message.reply("Разбанил.");
+          message.reply("\nРазбанил.");
         }
         else {
-          message.reply("Перепроверьте ник.");
+          message.reply("\nПерепроверьте ник.");
         }
       },
       reject => {
-        message.reply("Не могу найти.");
+        message.reply("\nНе могу найти.");
       }
     );
   }

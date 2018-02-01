@@ -8,7 +8,7 @@ class DiscordCommandAhelp extends DiscordCommand {
     var config = this.subsystem.manager.getSubsystem("Config").config;
     var byondConnector = this.subsystem.manager.getSubsystem("Byond Connector").byondConnector;
     if (args.length < 1) {
-      message.reply("Использование: `" + config.discord_command_character + "ah ckey message`");
+      message.reply("\nИспользование: `" + config.discord_command_character + "ah ckey message`");
       return;
     }
     var ahelpCkey = args[0];

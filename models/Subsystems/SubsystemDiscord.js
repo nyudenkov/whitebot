@@ -75,7 +75,7 @@ class SubsystemDiscord extends Subsystem {
     }
 
     if (message.guild == undefined) {
-      message.reply("Ты должен использовать бота в канале.");
+      message.reply("\nТы должен использовать бота в канале.");
       return;
     }
 
@@ -101,7 +101,7 @@ class SubsystemDiscord extends Subsystem {
       var command = this.getCommand(split[0]);
 
       if (!command) {
-        message.reply("Невозможно найти данную команду. Попробуйте использовать: ` " + config.discord_command_character + "help` чтобы увидеть полный список команд.");
+        message.reply("\nНевозможно найти данную команду. Попробуйте использовать: ` " + config.discord_command_character + "help` чтобы увидеть полный список команд.");
         return;
       }
 
@@ -111,7 +111,7 @@ class SubsystemDiscord extends Subsystem {
           var userPermissions = this.permissionManager.getUserPermissions(resolve);
           if (!command.hasPermission(userPermissions) && !(this.permissionManager.permissions["admins"].includes(message.author.id))) {
             this.logger.log("info", message.author.username + "#" + message.author.discriminator + " (" + message.author.id + ") tried to use the command " + config.discord_command_character + command.name + " but did not have permission.");
-            message.reply("У Вас нет доступа к этой команде.");
+            message.reply("\nУ Вас нет доступа к этой команде.");
             return;
           }
 
@@ -121,7 +121,7 @@ class SubsystemDiscord extends Subsystem {
 
         },
         reject => {
-          message.reply("There seemed to be an error getting your GuildMember object, you should probably let someone know about this.");
+          message.reply("\nThere seemed to be an error getting your GuildMember object, you should probably let someone know about this.");
         }
       );
     }

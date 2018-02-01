@@ -9,7 +9,7 @@ class DiscordCommandUnsubscribe extends DiscordCommand {
     onRun(message, permissions, args) {
         var config = this.subsystem.manager.getSubsystem("Config").config;
         message.member.removeRole(config.discord_subscriber_role);
-        message.reply("Ты отписался.");
+        message.reply("\nТы отписался.");
     }
 
 }

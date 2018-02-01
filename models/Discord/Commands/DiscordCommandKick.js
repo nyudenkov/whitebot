@@ -10,7 +10,7 @@ class DiscordCommandKick extends DiscordCommand {
     var config = this.subsystem.manager.getSubsystem("Config").config;
 
     if (args.length < 1) {
-      message.reply("Использование: `" + config.discord_command_character + "kick [@UserName] <reason>`");
+      message.reply("\nИспользование: `" + config.discord_command_character + "kick [@UserName] <reason>`");
       return;
     }
 
@@ -22,7 +22,7 @@ class DiscordCommandKick extends DiscordCommand {
     }
 
     if (user == undefined) {
-      message.reply("Не могу найти.");
+      message.reply("\nНе могу найти.");
       return;
     }
 
@@ -32,11 +32,11 @@ class DiscordCommandKick extends DiscordCommand {
       (resolve) => {
         var kickeeperms = this.subsystem.permissionManager.getUserPermissions(resolve);
         if (resolve.id == message.member.id) {
-          message.reply("Ты не можешь кикнуть сам себя.");
+          message.reply("\nТы не можешь кикнуть сам себя.");
           return;
         }
         if (kickeeperms.includes("kick")) {
-          message.reply("Ты не можешь кикать тех, кто владеет правами на кик.");
+          message.reply("\nТы не можешь кикать тех, кто владеет правами на кик.");
           return;
         }
 
@@ -54,12 +54,12 @@ class DiscordCommandKick extends DiscordCommand {
             message.reply(resolve.user.username + " Was kicked from the server for `" + reason + "`.");
           },
           (reject) => {
-            message.reply("Ошибка.");
+            message.reply("\nОшибка.");
           }
         );
       },
       (reject) => {
-        message.reply("Ошибка.");
+        message.reply("\nОшибка.");
       }
     );
   }

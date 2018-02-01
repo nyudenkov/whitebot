@@ -9,7 +9,7 @@ class DiscordCommandBan extends DiscordCommand {
   onRun(message, permissions, args) {
     var config = this.subsystem.manager.getSubsystem("Config").config;
     if(args.length < 1) {
-      message.reply("Использование: `" + config.discord_command_character + "ban [@UserName] <reason>`");
+      message.reply("\nИспользование: `" + config.discord_command_character + "ban [@UserName] <reason>`");
       return;
     }
 
@@ -21,7 +21,7 @@ class DiscordCommandBan extends DiscordCommand {
     }
 
     if(user == undefined) {
-      message.reply("Не могу найти.");
+      message.reply("\nНе могу найти.");
       return;
     }
 
@@ -39,13 +39,13 @@ class DiscordCommandBan extends DiscordCommand {
         var banStatus = this.subsystem.banManager.ban(resolve, reason, false);
 
         if(banStatus) {
-          message.reply("Забанил.");
+          message.reply("\nЗабанил.");
         } else {
-          message.reply("Невозможно забанить.")
+          message.reply("\nНевозможно забанить.")
         }
       },
       (reject) => {
-        message.reply("Отклонено. Ошибка.");
+        message.reply("\nОтклонено. Ошибка.");
       }
     );
   }
