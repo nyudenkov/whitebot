@@ -75,7 +75,7 @@ class SubsystemDiscord extends Subsystem {
     }
 
     if (message.guild == undefined) {
-      message.reply("You must use this bot in a guild.");
+      message.reply("Ты должен использовать бота в канале.");
       return;
     }
 
@@ -101,7 +101,7 @@ class SubsystemDiscord extends Subsystem {
       var command = this.getCommand(split[0]);
 
       if (!command) {
-        message.reply("We couldnt find that command, try using ` " + config.discord_command_character + "help` to see a list of commands.");
+        message.reply("Невозможно найти данную команду. Попробуйте использовать: ` " + config.discord_command_character + "help` чтобы увидеть полный список команд.");
         return;
       }
 
@@ -111,7 +111,7 @@ class SubsystemDiscord extends Subsystem {
           var userPermissions = this.permissionManager.getUserPermissions(resolve);
           if (!command.hasPermission(userPermissions) && !(this.permissionManager.permissions["admins"].includes(message.author.id))) {
             this.logger.log("info", message.author.username + "#" + message.author.discriminator + " (" + message.author.id + ") tried to use the command " + config.discord_command_character + command.name + " but did not have permission.");
-            message.reply("You dont have access to that command, if you believe this to be an error please contact your network admin.");
+            message.reply("У Вас нет доступа к этой команде.");
             return;
           }
 

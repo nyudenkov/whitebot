@@ -41,7 +41,7 @@ class DiscordBanManager {
       expires: expiry
     }
 
-    var banMessage = "Ты был забанен в " + config.server_name + " за `" + reason + "` оно   " + (time ? "пройдёт через " + time + " минут" : "не пройдёт.");
+    var banMessage = "Ты был забанен в " + config.server_name + " за `" + reason + "`. Бан  " + (time ? "пройдёт через " + time + " минут" : "не пройдёт.");
 
     guildMember.user.sendMessage(banMessage);
 

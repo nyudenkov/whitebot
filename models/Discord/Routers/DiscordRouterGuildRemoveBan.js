@@ -12,7 +12,7 @@ class DiscordRouterGuildBanRemove extends DiscordRouter {
       var date = new Date();
       var response = "`[" + date.getFullYear() + ":" + date.getMonth() + ":" + date.getDate() + " " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds() + "]` ";
 
-      feedbackChannel.send(response + "**" + user.username + "#" + user.discriminator + "** был разбанен");
+      feedbackChannel.send(response + "**" + user.username + "#" + user.discriminator + "** был разбанен.");
     });
   }
 
