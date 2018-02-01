@@ -1,6 +1,5 @@
 const DiscordCommand = require('../DiscordCommand.js');
 var windows1251 = require('windows-1251')
-var sleep = require('sleep');
 class DiscordCommandAhelp extends DiscordCommand {
   constructor(subsystem) {
     super("ah", "ответить на АХелп.", 'ah', subsystem);
@@ -19,13 +18,8 @@ class DiscordCommandAhelp extends DiscordCommand {
       if ('error' in results) {
         message.reply(results.error);
       }
-      else {
-        var BotMessage = message.reply(results.data);
-        message.delete()
-        sleep.sleep(10);
-        BotMessage.delete()
-      }
     });
+    message.delete()
   }
 }
 module.exports = DiscordCommandAhelp;
