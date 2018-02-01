@@ -1,8 +1,0 @@
-## Communication key for receiving data through world/Topic(), you don't want to give this out
-COMMS_KEY Тут должен быть написан ключ, совпадающий с параметром server_key в server.json
-
-## Discord Bot Settings.
-webhook_key Тут должен быть написан ключ, совпадающий с параметром server_webhook_key в server.json
-webhook_address http://ip:port/api/byond/
-
-## ВНИМАНИЕ, НАДО ДОБАВИТЬ ДВА ПОСЛЕДНИХ ПАРАМЕТРА В ПРОВЕРКУ, И ЗАПИЛИТЬ ДЛЯ НИХ ПЕРЕМЕННЫЕ И ВСЁ ТАКОЕ
