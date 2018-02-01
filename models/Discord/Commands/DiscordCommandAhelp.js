@@ -18,6 +18,9 @@ class DiscordCommandAhelp extends DiscordCommand {
       if ('error' in results) {
         message.reply(results.error);
       }
+      else {
+        message.reply(results.data);
+      }
     });
     message.delete()
   }
