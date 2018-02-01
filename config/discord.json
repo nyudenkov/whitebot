@@ -17,5 +17,6 @@
   "discord_restricted_channels": [],
   "discord_subscriber_role": "40687368437733786",
   "discord_tempban_interval": 15000,
-  "git_update": false
+  "git_update": false,
+  "server_name": "Server's name here."
 }
