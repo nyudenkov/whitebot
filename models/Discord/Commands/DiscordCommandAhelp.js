@@ -19,6 +19,7 @@ class DiscordCommandAhelp extends DiscordCommand {
         message.reply(results.error);
       }
     });
+    message.delete()
   }
 }
 module.exports = DiscordCommandAhelp;
