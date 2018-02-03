@@ -47,7 +47,7 @@ class DiscordCommandInfo extends DiscordCommand {
 					embed.setAuthor("Информация", "https://avatars1.githubusercontent.com/u/31140765?s=70&v=4");
 					embed.setDescription("Присоединись на сервер сейчас по адресу " + config.server_join_address);
 					embed.addField("Игроков онлайн:", results.data, true);
-					embed.addField("Длительность раунда:", round_duration + " Минут", true);
+					embed.addField("Длительность раунда:", round_duration + " минут", true);
 					embed.addField("Администраторов онлайн:", adminwho, false);
 					embed.setColor(embedcolor);
 

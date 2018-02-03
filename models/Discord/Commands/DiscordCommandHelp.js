@@ -7,7 +7,7 @@ class DiscordCommandHelp extends DiscordCommand {
   }
 
   onRun(message, permissions, args) {
-    var response = "Доступные команды: \n";
+    var response = "\nДоступные команды: \n";
     var config = this.subsystem.manager.getSubsystem("Config").config;
 
     var helpOption = args[0];
